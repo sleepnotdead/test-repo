@@ -13,6 +13,7 @@ public class Product {
     private Long id;
 
     private String name;
+    private String category;
     private String description;
     private BigDecimal price;
 
@@ -22,10 +23,11 @@ public class Product {
     public Product() {
     }
 
-    private Product(Long id, String name, String description, BigDecimal price, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    private Product(Long id, String name, String description, String category, BigDecimal price, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.category = category;
         this.price = price;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -46,6 +48,7 @@ public class Product {
     public Long getId() { return id; }
     public String getName() { return name; }
     public String getDescription() { return description; }
+    public String getCategory() { return category; }
     public BigDecimal getPrice() { return price; }
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
@@ -72,6 +75,7 @@ public class Product {
         private Long id;
         private String name;
         private String description;
+        private String category;
         private BigDecimal price;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
@@ -82,6 +86,10 @@ public class Product {
         }
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+        public Builder category(String category) {
+            this.category = category;
             return this;
         }
         public Builder description(String description) {
@@ -98,6 +106,7 @@ public class Product {
                     id,
                     name,
                     description,
+                    category,
                     price,
                     createdAt,
                     updatedAt

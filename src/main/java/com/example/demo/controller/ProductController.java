@@ -29,6 +29,7 @@ public class ProductController {
         Product created = repository.save(
                 Product.builder()
                         .description(request.getDescription())
+                        .category(request.getCategory())
                         .price(request.getPrice() != null ? request.getPrice() : BigDecimal.valueOf(0))
                         .build()
         );
